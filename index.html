@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ассоциация "Коллегия адвокатов Ставропольского края на Кавказских Минеральных Водах"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="photo_2025-08-28_22-14-55.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="photo_2025-08-28_22-14-55.jpg" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            padding: 15px 0;
+            border-bottom: 2px solid #2c3e50;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2c3e50;
+            max-width: 250px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 14px;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+        
+        nav a:hover {
+            color: #e74c3c;
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .hero-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .hero-text p {
+            margin-bottom: 25px;
+        }
+        
+        .intro-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .intro-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        
+        .intro-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .about {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .founder-info {
+            margin-top: 40px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .founder-info h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .founder-details {
+            text-align: left;
+            line-height: 2;
+        }
+        
+        .services {
+            padding: 80px 0;
+            background: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            border: 2px solid #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+            background: #fff;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: #2c3e50;
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .lawyers {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .lawyers-scroll-container {
+            overflow-x: auto;
+            padding: 20px 0;
+            margin: 0 -15px;
+            cursor: grab;
+        }
+        
+        .lawyers-scroll-container:active {
+            cursor: grabbing;
+        }
+        
+        .lawyer-grid {
+            display: flex;
+            gap: 30px;
+            padding: 0 15px;
+            min-width: max-content;
+        }
+        
+        .lawyer-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            min-width: 280px;
+            flex-shrink: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .lawyer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .lawyer-card h3 {
+            color: #2c3e50;
+            margin: 15px 0 10px;
+            font-weight: 700;
+        }
+        
+        /* Стили для скроллбара */
+        .lawyers-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .lawyers-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .lawyers-scroll-container::-webkit-scrollbar-thumb {
+            background: #2c3e50;
+            border-radius: 10px;
+        }
+        
+        .lawyers-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #1a252f;
+        }
+        
+        .contact {
+            padding: 80px 0;
+            background: #2c3e50;
+            color: #fff;
+        }
+        
+        .contact .section-title {
+            color: #fff;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 30px auto 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        
+        .contact-info p {
+            margin: 18px 0;
+            font-size: 16px;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 700;
+        }
+        
+        .contact-info a:hover {
+            color: #e74c3c;
+            text-decoration: underline;
+        }
+        
+        .contact-details {
+            margin-top: 25px;
+        }
+        
+        /* Стили для формы */
+        .consultation-form {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.2);
+        }
+        
+        .consent-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 25px;
+        }
+        
+        .submit-btn:hover {
+            background: #1a252f;
+        }
+        
+        footer {
+            padding: 30px 0;
+            background: #1a252f;
+            color: #fff;
+            text-align: center;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 968px) {
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .intro-image {
+                height: 400px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                justify-content: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 16px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding: 25px;
+            }
+            
+            .intro-text {
+                font-size: 18px;
+            }
+            
+            .logo-img {
+                width: 80px;
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 14px;
+                max-width: 200px;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero-text {
+                font-size: 15px;
+            }
+            
+            .intro-section,
+            .about,
+            .services,
+            .lawyers,
+            .contact,
+            .consultation-form {
+                padding: 60px 0;
+            }
+            
+            .intro-image {
+                height: 350px;
+            }
+            
+            .founder-info {
+                padding: 20px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .logo-text {
+                max-width: none;
+            }
+            
+            .logo-img {
+                width: 70px;
+                height: 50px;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+            
+            .form-title {
+                font-size: 24px;
+            }
+            
+            .lawyer-card {
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-img">
+                        <img src="photo_2025-08-28_22-14-55.jpg" alt="Логотип Коллегии адвокатов">
+                    </div>
+                    <div class="logo-text">Ассоциация "Коллегия адвокатов Ставропольского края на Кавказских Минеральных Водах"</div>
+                </div>
+                <nav>
+                    <div class="nav-links">
+                        <a href="#about">О нас</a>
+                        <a href="#services">Услуги</a>
+                        <a href="#lawyers">Адвокаты</a>
+                        <a href="#contact">Контакты</a>
+                        <a href="#consultation">Консультация</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <p>Добро пожаловать на сайт нашей коллегии адвокатов!</p>
+                <p>С 2001 года мы объединяем более 40 опытных специалистов, которые готовы помочь вам в самых разных юридических вопросах! Наша команда успешно решает самые сложные правовые задачи, обеспечивая защиту интересов как частных лиц, так и крупных организаций.</p>
+                <p>Мы понимаем, что каждый случай уникален, и стремимся предложить вам индивидуальный подход и профессиональные решения.</p> 
+                 <p>Вы уже нашли профессионалов, готовых предложить надежные решения и поддержку в любых юридических ситуациях.Вы можете получить качественную помощь на территории всей России.</p>   
+                <p>Мы здесь, чтобы защитить ваши интересы и обеспечить надежную правовую защиту. Ваши интересы — наша приоритетная задача!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    Ассоциация "Коллегия адвокатов Ставропольского края на Кавказских Минеральных Водах"
+                </div>
+                <div class="intro-image">
+                    <img src="flux-1-kontext-dev_убери_фон.png" alt="Фото адвоката">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О нас</h2>
+            <div class="about-content">
+                <p>Основатель и руководитель - Президент Коллегии адвокатов СК на КМВ Геворков Владимир Георгиевич</p>
+                
+                <div class="founder-info">
+                    <h3>Заслуги и достижения</h3>
+                    <div class="founder-details">
+                        <p>• Заслуженный юрист России</p>
+                        <p>• Почетный адвокат РФ</p>
+                        <p>• Доктор юридических наук</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Услуги частным клиентам и организациям</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Уголовные дела</h3>
+                    <p>Защита на всех стадиях следствия и суда. Опыт ведения сложных дел.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Семейные споры</h3>
+                    <p>Разводы, раздел имущества, взыскание алиментов. Мирное решение конфликтов.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Недвижимость и земля</h3>
+                    <p>Споры с застройщиками, оформление сделок, земельные вопросы.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Арбитражные споры</h3>
+                    <p>Защита интересов бизнеса в судах, банкротство, договорные отношения.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Наследственные дела</h3>
+                    <p>Оформление наследства, споры между наследниками, признание завещаний.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Трудовые споры</h3>
+                    <p>Восстановление на работе, взыскание заработной платы, защита прав работников.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lawyers" class="lawyers">
+        <div class="container">
+            <h2 class="section-title">Наши адвокаты</h2>
+            <div class="lawyers-scroll-container" id="lawyersScroll">
+                <div class="lawyer-grid">
+                    <div class="lawyer-card">
+                        <h3>Иванникова Ольга Александровна</h3>
+                        <p>Специализация: уголовное право</p>
+                        <p>Стаж: 15 лет</p>
+                    </div>
+                    <div class="lawyer-card">
+                        <h3>Гаспарова Елена Рафаэловна</h3>
+                        <p>Специализация: семейное право</p>
+                        <p>Стаж: 12 лет</p>
+                    </div>
+                    <div class="lawyer-card">
+                        <h3>Геворков Георгий Владимирович</h3>
+                        <p>Специализация: арбитражные споры</p>
+                        <p>Стаж: 18 лет</p>
+                    </div>
+                    <div class="lawyer-card">
+                        <h3>Зеленская Юлия Александровна</h3>
+                        <p>Специализация: гражданское право</p>
+                        <p>Стаж: 10 лет</p>
+                    </div>
+                    <div class="lawyer-card">
+                        <h3>Петров Алексей Сергеевич</h3>
+                        <p>Специализация: налоговое право</p>
+                        <p>Стаж: 8 лет</p>
+                    </div>
+                    <div class="lawyer-card">
+                        <h3>Смирнова Анна Викторовна</h3>
+                        <p>Специализация: трудовое право</p>
+                        <p>Стаж: 11 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-info">
+                <h3>Коллегия адвокатов СК на КМВ</h3>
+                <div class="contact-details">
+                    <p><strong>Адрес:</strong> 357209, Ставропольский край, г. Минеральные Воды, ул. Свободы, д. 27</p>
+                    <p><strong>Телефон:</strong> <a href="tel:+79283566699">+7 (928) 356-66-99</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:femidakmw@yandex.ru">femidakmw@yandex.ru</a></p>
+                    <p><strong>Режим работы:</strong> Пн-Пт: 9:00–18:00, Сб: по записи</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultation" class="consultation-form">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Запишитесь на бесплатную консультацию к адвокату</h2>
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Ваше Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Ваш телефон</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <p class="consent-text">Отправляя заявку, вы соглашаетесь на обработку ваших персональных данных</p>
+                    <button type="submit" class="submit-btn">Записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© Коллегия адвокатов Ставропольского края на Кавказских Минеральных Водах, 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Обработка горизонтальной прокрутки колесом мыши
+        const lawyersScroll = document.getElementById('lawyersScroll');
+        
+        lawyersScroll.addEventListener('wheel', function(e) {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                this.scrollLeft += e.deltaY;
+            }
+        });
+
+        // Обработка формы
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получаем данные из формы
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Здесь нужно заменить YOUR_BOT_TOKEN и YOUR_CHAT_ID на реальные значения
+            const botToken = '8121672429:AAGPsoXay1o8rDPOWs-Ph1Owx8rGqLAyFPQ';
+            const chatId = '727400088';
+            
+            // Формируем сообщение для отправки в Telegram
+            const message = `Новая заявка на консультацию:%0AИмя: ${name}%0AТелефон: ${phone}`;
+            
+            // Отправляем сообщение в Telegram (работает только с реальными botToken и chatId)
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`, {
+                method: 'GET'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Ваша заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                    document.getElementById('consultationForm').reset();
+                } else {
+                    alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+            });
+        });
+    </script>
+</body>
+</html>
